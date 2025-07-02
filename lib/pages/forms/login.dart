@@ -23,7 +23,6 @@ class _LoginPageState extends State<LoginPage> {
       Navigator.pushReplacementNamed(context, '/home');
     } catch (e) {
       print(e);
-      // Afficher un message d'erreur (vous pouvez utiliser un SnackBar ou un AlertDialog)
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Erreur de connexion : ${e.toString()}')),
       );

@@ -124,7 +124,6 @@ class _QuizPageState extends State<QuizPage> {
       _score++;
     }
 
-    
     Future.delayed(Duration(milliseconds: 1000), () {
       setState(() {
         if (_currentQuestionIndex < _questions.length - 1) {
@@ -141,7 +140,6 @@ class _QuizPageState extends State<QuizPage> {
     Score score = Score(userId: userId, score: _score, date: DateTime.now());
     await DatabaseHelper().insertScore(score);
 
-    
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
@@ -169,11 +167,10 @@ class _QuizPageState extends State<QuizPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Animation de glissement pour la question
             AnimatedSwitcher(
               duration: Duration(milliseconds: 500),
               child: Container(
-                key: ValueKey<int>(_currentQuestionIndex), // Clé unique pour chaque question
+                key: ValueKey<int>(_currentQuestionIndex),
                 child: Column(
                   children: [
                     Text(
@@ -190,8 +187,8 @@ class _QuizPageState extends State<QuizPage> {
                       }).toList(),
                     ),
                   ],
-                ),
-              ).animate().slide(duration: 500.ms, curve: Curves.easeInOut), 
+                ).animate().slide(duration: 500.ms, curve: Curves.easeInOut),
+              ),
             ),
           ],
         ),

@@ -31,7 +31,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Accueil')),
+      appBar: AppBar(title: Text('Quizzos')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

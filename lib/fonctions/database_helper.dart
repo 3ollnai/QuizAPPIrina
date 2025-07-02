@@ -18,9 +18,9 @@ class DatabaseHelper {
   }
 
   Future<Database> _initDB() async {
-    // Obtenez le chemin du dossier de l'application
+    
     final directory = await getApplicationDocumentsDirectory();
-    String path = join(directory.path, 'quiz_app.db'); // Utilisez le chemin du dossier
+    String path = join(directory.path, 'quiz_app.db'); 
     return await openDatabase(
       path,
       version: 1,
